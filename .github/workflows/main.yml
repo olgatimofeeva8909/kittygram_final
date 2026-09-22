@@ -47,7 +47,6 @@ jobs:
           DB_HOST: localhost
           DB_PORT: 5432
         run: |
-          cd backend
           flake8 .
           pytest
 
