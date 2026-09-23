@@ -9,6 +9,7 @@ services:
     env_file: .env
     volumes:
       - pg_data:/var/lib/postgresql/data
+    restart: unless-stopped 
 
   backend:
     image: olgatimofeeva/kittygram_backend:latest
@@ -16,6 +17,9 @@ services:
     volumes:
       - static:/static
       - media:/app/media
+    depends_on:
+      - db
+    restart: unless-stopped
 
   frontend:
     image: olgatimofeeva/kittygram_frontend:latest
@@ -30,3 +34,6 @@ services:
     volumes:
       - static:/static
       - media:/media
+    depends_on:
+      - backend
+    restart: unless-stopped 
