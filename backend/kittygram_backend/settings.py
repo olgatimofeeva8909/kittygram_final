@@ -13,11 +13,6 @@ ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',') if os.getenv(
     'ALLOWED_HOSTS'
 ) else []
 
-
-CSRF_TRUSTED_ORIGINS = [
-    'https://kittygram2026.ddnsfree.com',
-]
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
