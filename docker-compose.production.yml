@@ -23,7 +23,7 @@ services:
 
   frontend:
     image: olgatimofeeva/kittygram_frontend:latest
-    command: cp -r /app/build/. /static/
+    command: cp -r /app/build/. /static/ && cp -r /app/build/static/. /static/
     volumes:
       - static:/static
 
