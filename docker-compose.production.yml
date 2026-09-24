@@ -29,6 +29,7 @@ services:
 
   gateway:
     image: olgatimofeeva/kittygram_gateway:latest
+    env_file: .env 
     ports:
       - 9000:80
     volumes:
